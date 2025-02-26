@@ -3,12 +3,18 @@ body {
   margin: 0; 
   overflow: hidden; 
   font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  cursor: default;
 }
 
 #map-container { 
   width: 100vw; 
   height: 100vh; 
   background: #f0f0f0;
+  cursor: grab;
+}
+
+#map-container:active {
+  cursor: grabbing;
 }
 
 .loading {
@@ -31,6 +37,7 @@ body {
   min-width: 250px;
   max-width: 350px;
   z-index: 1000;
+  pointer-events: auto;
 }
 
 .popup-close {
@@ -40,6 +47,8 @@ body {
   cursor: pointer;
   font-size: 20px;
   color: #666;
+  padding: 5px;
+  z-index: 1001;
 }
 
 .title-container {
@@ -47,6 +56,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
+  padding-right: 20px;
 }
 
 .title-container h3 {
@@ -60,18 +70,33 @@ body {
   color: #999;
   font-size: 20px;
   transition: color 0.3s ease;
+  z-index: 1001;
 }
 
 .favorite-btn.active {
   color: #ff4444;
 }
 
+.festival-details {
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 4px;
+  margin-top: 15px;
+  position: relative;
+  z-index: 1001;
+}
+
+.festival-details p {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
 .festival-details a {
   color: #0066cc;
   text-decoration: none;
-  position: relative;
-  z-index: 1001; /* 确保链接在最上层 */
   cursor: pointer;
+  position: relative;
+  z-index: 1002;
 }
 
 .festival-details a:hover {
@@ -79,13 +104,11 @@ body {
   color: #0055aa;
 }
 
-/* 确保弹窗内容可以点击 */
-.festival-popup {
-  pointer-events: auto;
-}
-
-.festival-details {
-  pointer-events: auto;
-  position: relative;
-  z-index: 1001;
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .festival-popup {
+      width: 90%;
+      max-width: none;
+      margin: 0 auto;
+  }
 }
