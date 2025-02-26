@@ -3,23 +3,22 @@ body {
   margin: 0; 
   overflow: hidden; 
   font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-  cursor: default; /* 设置默认光标 */
 }
 
 #map-container { 
   width: 100vw; 
   height: 100vh; 
   background: #f0f0f0;
-  cursor: grab; /* 设置地图拖动光标 */
 }
 
-#map-container:active {
-  cursor: grabbing; /* 拖动时的光标 */
-}
-
-/* 标记点样式 */
-.marker {
-  cursor: pointer; /* 确保标记点可点击 */
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: #666;
+  display: none;
 }
 
 /* 弹窗样式 */
@@ -32,41 +31,61 @@ body {
   min-width: 250px;
   max-width: 350px;
   z-index: 1000;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
-  will-change: opacity, transform;
-  pointer-events: auto;
-  cursor: default; /* 弹窗使用默认光标 */
 }
-
-/* ... 其他样式保持不变 ... */
 
 .popup-close {
-  cursor: pointer; /* 确保关闭按钮可点击 */
-  font-size: 24px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
   color: #666;
-  padding: 5px;
-  line-height: 1;
 }
 
-.website-link {
-  color: #0066cc;
-  text-decoration: none;
-  position: relative;
-  z-index: 1001;
-  cursor: pointer; /* 确保链接可点击 */
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.title-container h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
 }
 
 .favorite-btn {
-  position: absolute;
-  top: -30px;
-  right: 0;
-  cursor: pointer; /* 确保收藏按钮可点击 */
+  cursor: pointer;
   color: #999;
   font-size: 20px;
-  transition: transform 0.2s ease;
-  padding: 5px;
+  transition: color 0.3s ease;
 }
 
-/* ... 其他样式保持不变 ... */
+.favorite-btn.active {
+  color: #ff4444;
+}
+
+.festival-details a {
+  color: #0066cc;
+  text-decoration: none;
+  position: relative;
+  z-index: 1001; /* 确保链接在最上层 */
+  cursor: pointer;
+}
+
+.festival-details a:hover {
+  text-decoration: underline;
+  color: #0055aa;
+}
+
+/* 确保弹窗内容可以点击 */
+.festival-popup {
+  pointer-events: auto;
+}
+
+.festival-details {
+  pointer-events: auto;
+  position: relative;
+  z-index: 1001;
+}
