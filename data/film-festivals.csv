@@ -1,0 +1,16 @@
+id,name,name_en,latitude,longitude,description,description_en,date,website,country,category,founded_year,awards
+1,戛纳电影节,Cannes Film Festival,43.5528,7.0174,创立于1946年的世界最著名电影节之一。每年5月在法国戛纳举办，以金棕榈奖闻名于世。,Founded in 1946 one of the world's most prestigious film festivals.,每年5月,www.festival-cannes.com,France,A类,1946,金棕榈奖
+2,威尼斯电影节,Venice Film Festival,45.4408,12.3155,始于1932年的世界最古老电影节。每年8-9月在意大利威尼斯举办，金狮奖是最高荣誉。,The world's oldest film festival founded in 1932.,每年8-9月,www.labiennale.org,Italy,A类,1932,金狮奖
+3,柏林电影节,Berlin International Film Festival,52.5200,13.4050,创办于1951年的欧洲三大电影节之一。每年2月在德国柏林举办，金熊奖为最高奖项。,One of Europe's leading film festivals founded in 1951.,每年2月,www.berlinale.de,Germany,A类,1951,金熊奖
+4,上海国际电影节,Shanghai International Film Festival,31.2304,121.4737,中国最具国际影响力的电影节。创办于1993年，金爵奖是最高奖项。,China's most influential international film festival.,每年6月,www.siff.com,China,A类,1993,金爵奖
+5,东京国际电影节,Tokyo International Film Festival,35.6762,139.6503,日本最大的国际电影节，创办于1985年。东京大奖为最高荣誉。,Japan's largest international film festival.,每年10-11月,www.tiff-jp.net,Japan,A类,1985,东京大奖
+6,釜山国际电影节,Busan International Film Festival,35.1796,129.0756,亚洲最大的电影节之一，创办于1996年。新浪潮奖是其特色奖项。,One of Asia's largest film festivals.,每年10月,www.biff.kr,South Korea,A类,1996,新浪潮奖
+7,多伦多国际电影节,Toronto International Film Festival,43.6459,-79.3873,北美最具影响力的电影节之一，创办于1976年。人民选择奖备受关注。,One of North America's most influential film festivals.,每年9月,www.tiff.net,Canada,A类,1976,人民选择奖
+8,圣丹斯电影节,Sundance Film Festival,40.6461,-111.4980,美国最大的独立电影节，由罗伯特·雷德福创办于1978年。,America's largest independent film festival.,每年1月,www.sundance.org,USA,独立电影节,1978,评审团大奖
+9,莫斯科国际电影节,Moscow International Film Festival,55.7558,37.6173,创办于1935年的世界历史最悠久的电影节之一，圣乔治奖为最高奖项。,One of the world's oldest film festivals founded in 1935.,每年4月,www.moscowfilmfestival.ru,Russia,A类,1935,圣乔治奖
+10,鹿特丹国际电影节,International Film Festival Rotterdam,51.9244,4.4777,以展映实验性和独立电影闻名的电影节，创办于1972年。,Known for experimental and independent films.,每年1-2月,www.iffr.com,Netherlands,实验电影节,1972,虎虾奖
+11,洛迦诺国际电影节,Locarno Film Festival,46.1667,8.8333,瑞士著名的国际电影节，创办于1946年，金豹奖为最高荣誉。,Switzerland's prestigious international film festival.,每年8月,www.locarnofestival.ch,Switzerland,A类,1946,金豹奖
+12,卡罗维发利国际电影节,Karlovy Vary International Film Festival,50.2315,12.8783,中欧最重要的电影节，创办于1946年，水晶地球仪奖为最高奖项。,Central Europe's leading film festival.,每年7月,www.kviff.com,Czech Republic,A类,1946,水晶地球仪奖
+13,蒙特利尔世界电影节,Montreal World Film Festival,45.5017,-73.5673,加拿大重要的国际电影节，美洲大奖为最高荣誉。,An important international film festival in Canada.,每年8-9月,www.ffm-montreal.org,Canada,A类,1977,美洲大奖
+14,西班牙圣塞巴斯蒂安电影节,San Sebastian International Film Festival,43.3183,-1.9812,西班牙最重要的电影节，金贝壳奖为最高荣誉。,Spain's most important film festival.,每年9月,www.sansebastianfestival.com,Spain,A类,1953,金贝壳奖
+15,马拉喀什国际电影节,Marrakech International Film Festival,31.6295,-8.0100,非洲最具影响力的电影节之一，金星奖为最高荣誉。,One of Africa's most influential film festivals.,每年12月,www.festivalmarrakech.info,Morocco,A类,2001,金星奖

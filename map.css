@@ -1,0 +1,135 @@
+.festival-popup {
+    position: fixed;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    min-width: 250px;
+    max-width: 350px;
+    z-index: 1000;
+    animation: popupFadeIn 0.3s ease-out;
+  }
+  
+  /* 确保弹窗在屏幕内 */
+  @media screen and (max-width: 400px) {
+    .festival-popup {
+      max-width: 90vw;
+      width: 90vw;
+    }
+  }
+  
+  /* 标题区域样式 */
+  .festival-popup .title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-right: 30px; /* 为关闭按钮留出空间 */
+  }
+  
+  .festival-popup h3 {
+    margin: 0;
+    color: #333;
+    font-size: 18px;
+    flex: 1;
+  }
+  
+  /* 收藏按钮移到标题旁边 */
+  .favorite-btn {
+    cursor: pointer;
+    color: #ddd;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+    padding: 0 5px;
+  }
+  
+  .favorite-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .favorite-btn.active {
+    color: #ff4444;
+  }
+  
+  /* 关闭按钮样式 */
+  .festival-popup .popup-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    font-size: 22px;
+    color: #000000 !important;
+    width: 24px;
+    height: 24px;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    opacity: 0.9;
+    z-index: 2;
+  }
+  
+  .festival-popup .popup-close:hover {
+    background: #f0f0f0;
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  
+  /* 内容样式 */
+  .festival-popup p {
+    margin: 0 0 15px 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .festival-details a {
+    color: #0066cc;
+    text-decoration: none;
+    position: relative;
+    z-index: 1001; /* 确保链接在最上层 */
+    cursor: pointer;
+  }
+  
+  .festival-details a:hover {
+    text-decoration: underline;
+    color: #0055aa;
+  }
+  
+  /* 确保弹窗内容可以点击 */
+  .festival-popup {
+    pointer-events: auto;
+  }
+  
+  .festival-details {
+    pointer-events: auto;
+    position: relative;
+    z-index: 1001;
+  }
+  
+  /* 弹窗动画 */
+  @keyframes popupFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* 确保弹窗在屏幕内的位置调整 */
+  .festival-popup {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  /* 在小屏幕上的特殊处理 */
+  @media screen and (max-height: 600px) {
+    .festival-popup {
+      max-height: 80vh;
+    }
+  }
