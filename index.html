@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>世界电影节地图</title>
     
-    <!-- 修改 Three.js CDN 链接 -->
-    <script src="https://cdn.jsdelivr.net/npm/three@0.157.0/build/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.157.0/examples/js/controls/OrbitControls.js"></script>
+    <!-- 使用 unpkg CDN -->
+    <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
     
     <!-- 添加样式文件 -->
     <style>
@@ -31,53 +31,53 @@
             display: none;
         }
     </style>
-    <link rel="stylesheet" href="map.css">
     
-    <!-- 添加组件文件 -->
-    <script src="FilmFestivalMap.js"></script>
-    <script src="FestivalPopup.js"></script>
+    <!-- 确保路径正确 -->
+    <link rel="stylesheet" href="./map.css">
+    <script src="./FilmFestivalMap.js"></script>
+    <script src="./FestivalPopup.js"></script>
 </head>
 <body>
     <div id="map-container"></div>
     <div id="loading" class="loading">加载中...</div>
 
     <script>
+        // 添加加载检查
+        window.addEventListener('load', () => {
+            if (!window.THREE) {
+                console.error('Three.js 加载失败');
+                document.getElementById('loading').textContent = 'Three.js 加载失败，请检查网络连接';
+                return;
+            }
+        });
+
         document.addEventListener('DOMContentLoaded', async () => {
             try {
-                // 显示加载提示
                 const loading = document.getElementById('loading');
                 loading.style.display = 'block';
 
-                // 初始化地图
                 const map = new FilmFestivalMap();
                 map.renderer.setSize(window.innerWidth, window.innerHeight);
                 document.getElementById('map-container').appendChild(map.renderer.domElement);
-                
-                // 开始动画
                 map.animate();
 
-                // 隐藏加载提示
                 loading.style.display = 'none';
-
             } catch (error) {
                 console.error('初始化失败:', error);
-                // 显示错误信息
                 const loading = document.getElementById('loading');
-                loading.textContent = '加载失败，请刷新页面重试';
+                loading.textContent = '加载失败: ' + error.message;
                 loading.style.color = '#ff4444';
             }
         });
 
-        // 添加错误处理
         window.addEventListener('error', (event) => {
             console.error('页面错误:', event.error);
             const loading = document.getElementById('loading');
-            loading.textContent = '出现错误，请刷新页面重试';
+            loading.textContent = '错误: ' + event.error.message;
             loading.style.color = '#ff4444';
             loading.style.display = 'block';
         });
 
-        // 处理窗口大小变化
         window.addEventListener('resize', () => {
             const mapContainer = document.getElementById('map-container');
             mapContainer.style.width = window.innerWidth + 'px';
