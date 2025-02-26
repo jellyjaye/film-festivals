@@ -12,7 +12,7 @@
 
 ## 在线预览
 
-访问 https://jellyjaye.github.io/film-festivals-map/
+访问 https://jellyjaye.github.io/film-festivals/
 
 ## 本地运行
 
