@@ -55,6 +55,13 @@
                 map.renderer.setSize(window.innerWidth, window.innerHeight);
                 document.getElementById('map-container').appendChild(map.renderer.domElement);
                 
+                // 加载数据并添加标记点
+            console.log('开始加载数据...');
+            const festivals = await map.loadFestivalData();
+            console.log('数据加载完成:', festivals);
+            map.addFestivalMarkers(festivals);
+            console.log('标记点添加完成');
+            
                 // 开始动画
                 map.animate();
 
