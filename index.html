@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>世界电影节地图</title>
     
-    <!-- 使用 unpkg CDN -->
+    <!-- 改回最初可以工作的 CDN 链接 -->
     <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
     <script src="https://unpkg.com/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
     
@@ -32,25 +32,15 @@
         }
     </style>
     
-    <!-- 确保路径正确 -->
-    <link rel="stylesheet" href="./map.css">
-    <script src="./FilmFestivalMap.js"></script>
-    <script src="./FestivalPopup.js"></script>
+    <link rel="stylesheet" href="map.css">
+    <script src="FilmFestivalMap.js"></script>
+    <script src="FestivalPopup.js"></script>
 </head>
 <body>
     <div id="map-container"></div>
     <div id="loading" class="loading">加载中...</div>
 
     <script>
-        // 添加加载检查
-        window.addEventListener('load', () => {
-            if (!window.THREE) {
-                console.error('Three.js 加载失败');
-                document.getElementById('loading').textContent = 'Three.js 加载失败，请检查网络连接';
-                return;
-            }
-        });
-
         document.addEventListener('DOMContentLoaded', async () => {
             try {
                 const loading = document.getElementById('loading');
@@ -65,17 +55,9 @@
             } catch (error) {
                 console.error('初始化失败:', error);
                 const loading = document.getElementById('loading');
-                loading.textContent = '加载失败: ' + error.message;
+                loading.textContent = '加载失败，请刷新页面重试';
                 loading.style.color = '#ff4444';
             }
-        });
-
-        window.addEventListener('error', (event) => {
-            console.error('页面错误:', event.error);
-            const loading = document.getElementById('loading');
-            loading.textContent = '错误: ' + event.error.message;
-            loading.style.color = '#ff4444';
-            loading.style.display = 'block';
         });
 
         window.addEventListener('resize', () => {
